@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+    <meta charset="utf-8">
+    <title>Google Phone Gallery</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="scripts/vendor/angular.js"></script>
+    <script src="scripts/vendor/angular-route.js"></script>
+    <script src="scripts/vendor/angular-resource.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/filters.js"></script>
+    <script src="scripts/services.js"></script>
+</head>
+<body>
+
+    <div ng-view></div>
+
+</body>
+<!--<body ng-controller="PhoneListCtrl">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            &lt;!&ndash;Sidebar content&ndash;&gt;
+
+            Search: <input ng-model="query">
+            Sort by:
+            <select ng-model="orderProp">
+                <option value="name">Alphabetical</option>
+                <option value="age">Newest</option>
+            </select>
+
+        </div>
+        <div class="col-md-10">
+            &lt;!&ndash;Body content&ndash;&gt;
+
+            <ul class="phones">
+                <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
+                    <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+                    <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+                    <p>{{phone.snippet}}</p>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+</body>-->
+</html>
