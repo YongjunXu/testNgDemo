@@ -15,6 +15,25 @@
 
 
 exports.config = {
+  onPrepare: function() {
+        var folderName = (new Date()).toString().split(' ').splice(1, 4).join(' ');
+
+        var mkdirp = require('mkdirp');
+        var newFolder = "./reports/" + folderName;
+        //console.log(newFolder);
+        require('jasmine-reporters');
+
+        mkdirp(newFolder, function(err) {
+            if (err) {
+                console.error(err);
+            } else {
+                //console.log(folderName);
+                jasmine.getEnv().addReporter(new jasmine.JUnitXmlReporter(newFolder, true, true));
+            }
+        });
+  },
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+
   allScriptsTimeout: 11000,
 
   specs: [
@@ -22,10 +41,13 @@ exports.config = {
   ],
 
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+     chromeOption: {
+         args: '--test--type'
+     }
   },
 
-  chromeOnly: true,
+  //chromeOnly: true,
 
   //you should start the app server and setup the url to baseUrl below
   baseUrl: 'http://localhost:63342/GitHub/testNgDemo/'/*'http://localhost:8000/'*/,
@@ -33,6 +55,7 @@ exports.config = {
   framework: 'jasmine',
 
   jasmineNodeOpts: {
+    isVerbose: true,
     defaultTimeoutInterval: 30000
   }
 };
