@@ -13,6 +13,8 @@
         set Node Paramters and JavaScript File
         and then just run it */
 
+//reference : http://ramonvictor.github.io/protractor/slides/#/36
+
 
 exports.config = {
   allScriptsTimeout: 11000,
